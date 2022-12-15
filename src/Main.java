@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
         public static void main(String[] args) {
 //  Массивы. Часть 2
@@ -22,8 +20,8 @@ public class Main {
 
             int[] arr = generateRandomArray();
             int sumMonth = 0;
-            for (int index : arr) {
-                sumMonth += index;
+            for (int sumDay : arr) {
+                sumMonth += sumDay;
             }
             System.out.printf("Сумма трат за месяц составила %d рублей", sumMonth);
         }
@@ -34,12 +32,12 @@ public class Main {
             int[] arr = generateRandomArray();
             int maximum = arr[0];
             int minimum = arr[0];
-            for (int index : arr) {
-                if (minimum > index){
-                    minimum = index;
+            for (int elementValue : arr) {
+                if (minimum > elementValue){
+                    minimum = elementValue;
                 }
-                if(maximum < index) {
-                    maximum = index;
+                if(maximum < elementValue) {
+                    maximum = elementValue;
                 }
             }
             System.out.printf("Минимальная сумма трат за день составила %d рублей. Максимальная сумма трат за день составила %d рублей", minimum,maximum);
@@ -50,10 +48,10 @@ public class Main {
 
             int[] arr = generateRandomArray();
             int sumMonth = 0;
-            for (int index : arr) {
-                sumMonth += index;
+            for (int sumDay : arr) {
+                sumMonth += sumDay;
             }
-            double sumAverage = (double) (sumMonth / arr.length);
+            double sumAverage = (double) sumMonth / arr.length;
             System.out.printf("Средняя сумма трат за месяц составила %s рублей", String.format("%.2f",sumAverage));
         }
         public static void task4() {
@@ -61,15 +59,18 @@ public class Main {
             System.out.println("---------------------- Задача 4 ---------------------");
 
             char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-
+/*
             for (int i = 0, j = reverseFullName.length - 1; i < j; i++, j--) {
                 char temp = reverseFullName[i];
                 reverseFullName[i] = reverseFullName[j];
                 reverseFullName[j] = temp;
             }
 //            System.out.println(Arrays.toString(reverseFullName));
-            for (int index : reverseFullName) {
-                System.out.print((char) index);
+            for (int elementValue : reverseFullName) {
+                System.out.print((char) elementValue);
+*/
+            for (int i = reverseFullName.length - 1; i >=0; i--) {
+                System.out.print(reverseFullName[i]);
             }
         }
 }
